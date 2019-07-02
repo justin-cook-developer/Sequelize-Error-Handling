@@ -120,7 +120,7 @@ describe('The `User` Model', () => {
 
       let result, error;
       try {
-        result = await user2.validate();
+        result = await user2.save();
       } catch (err) {
         error = err;
       }

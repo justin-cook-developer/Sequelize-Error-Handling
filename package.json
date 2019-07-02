@@ -4,7 +4,7 @@
   "description": "A repo to document Sequelize validation error messages, and how to handle them.",
   "main": "index.js",
   "scripts": {
-    "npm start:dev": "nodemon ./server/index.js",
+    "start:dev": "nodemon ./server/index.js",
     "test:models": "mocha ./tests/models/*.test.js --watch",
     "test": "npm run test:models"
   },
