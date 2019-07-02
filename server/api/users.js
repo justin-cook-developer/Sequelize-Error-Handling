@@ -15,11 +15,11 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-    const [user, found] = await User.findOrCreate({
-      where: { email },
-      defaults: { name, password },
+    const user = await User.create({
+      name,
+      email,
+      password,
     });
-    found ? res.status(200) : res.status(201);
     res.json(user);
   } catch (error) {
     next(error);

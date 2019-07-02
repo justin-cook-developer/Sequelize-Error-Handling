@@ -28,6 +28,8 @@ describe('The `User` Model', () => {
     return User.truncate({ cascade: true });
   });
 
+  after(() => connection.sync({ force: true }));
+
   describe('attributes definition', () => {
     it('includes name, email, and password fields', async () => {
       const savedUser = await user.save();
