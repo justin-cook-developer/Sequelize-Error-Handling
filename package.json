@@ -1,0 +1,31 @@
+{
+  "name": "sequelize-error-documentation",
+  "version": "1.0.0",
+  "description": "A repo to document Sequelize validation error messages, and how to handle them.",
+  "main": "index.js",
+  "scripts": {
+    "npm start:dev": "nodemon ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Sequelize",
+    "error",
+    "message",
+    "validation"
+  ],
+  "author": "Justin Cook",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.9.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "sinon": "^7.3.2",
+    "sinon-chai": "^3.3.0"
+  }
+}
