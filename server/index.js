@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const { connection } = require('./db/index');
+const parseErrors = require('./parseErrors');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -19,7 +20,11 @@ app.use((req, res, next) => {
 });
 
 app.use((e, req, res, next) => {
-  console.error(e);
+  // this only works for the User model; need to abstract
+  if (e.name === 'SequelizeValidationError') {
+    res.json(parseErrors(e.errors));
+    return;
+  }
   next(e);
 });
 
