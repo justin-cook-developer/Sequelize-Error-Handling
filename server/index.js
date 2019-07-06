@@ -28,7 +28,9 @@ app.use((e, req, res, next) => {
   next(e);
 });
 
+const logPort = () => console.log(`Listening at port: ${PORT}`);
+
 connection
   .sync()
-  .then(() => app.listen(PORT, () => console.log(`Listening at port: ${PORT}`)))
+  .then(() => app.listen(PORT, logPort))
   .catch(console.error);
