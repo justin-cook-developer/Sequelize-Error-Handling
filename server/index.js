@@ -22,6 +22,7 @@ app.use((req, res, next) => {
 app.use((e, req, res, next) => {
   // this only works for the User model; need to abstract
   if (e.name === 'SequelizeValidationError') {
+    console.log(e);
     res.json(parseErrors(e.errors));
     return;
   }
